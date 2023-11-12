@@ -1,7 +1,8 @@
 import Add from "./Add";
 const Calculator = () => {
   return (
-    <div>
+    <div className="filter">
+    <h1>Simple Working Calculator</h1>
       <Add />
     </div>
   );

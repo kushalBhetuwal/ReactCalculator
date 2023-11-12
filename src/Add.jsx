@@ -5,7 +5,7 @@ const Add = () => {
   const [state, setState] = useState();
   const inputRef = useRef(null);
   function handleChange(e) {
-    setInputValue(e.target.value);
+    setInputValue(e.target.value.replace(/[^0-9]/g, ""));
   }
 
   function add() {
@@ -49,35 +49,22 @@ const Add = () => {
     setState(0);
   }
   return (
-    <div className="filter">
+    <div>
       <input
-        className="input"
+        pattern="[0-9]*"
         type="text"
         ref={inputRef}
         value={inputValue}
         onChange={handleChange}
+        placeholder="Type a number to calculate"
       />
       <br />
-      <div className="margin">
-        <button className="button" onClick={add}>
-          add
-        </button>
-        <button className="button" onClick={subtract}>
-          Subtract
-        </button>
-        <button className="button" onClick={division}>
-          Divide
-        </button>
-        <button className="button" onClick={multiply}>
-          Multiply
-        </button>
-        <button className="button color" onClick={resetInput}>
-          Reset Input
-        </button>
-        <button className="button color" onClick={resetResult}>
-          Reset Result
-        </button>
-      </div>
+      <button onClick={add}>add</button>
+      <button onClick={subtract}>Subtract</button>
+      <button onClick={division}>Divide</button>
+      <button onClick={multiply}>Multiply</button>
+      <button onClick={resetInput}>Reset Input</button>
+      <button onClick={resetResult}>Reset Result</button>
 
       <h1>Result:{state}</h1>
     </div>

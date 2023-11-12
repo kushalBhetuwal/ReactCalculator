@@ -12,24 +12,26 @@ code {
     monospace;
 }
 
-.button{
+
+button{
   padding:15px;
-  font-weight:bold;
   margin:20px;
+  font-weight: bold;
 }
 .filter{
-  margin:40px;
+  margin-left:30px;
 }
-.margin{
-  margin-top:20px;
-}
-.color{
-  background-color:#FF6C22;
-  color:white;
-  border:0;
-}
-.input{
-  width:300px;
+
+input{
+  width:250px;
   height:40px;
   margin-left:20px;
 }
+button:nth-last-child(2),
+button:nth-child(7)
+ {
+    background: tomato;
+    color: white;
+    border:none;
+}
+
